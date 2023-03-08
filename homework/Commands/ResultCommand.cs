@@ -19,8 +19,8 @@ namespace homework.Commands
         {
             try
             {
-                FileProcess fileProcess = new FileProcess(_globalViewModel);
-                _globalViewModel.StudentInfos = fileProcess.ResultStudent(_globalViewModel.StudentInfos);
+                /*FileProcess fileProcess = new FileProcess(_globalViewModel);
+                _globalViewModel.StudentInfos = fileProcess.ResultStudent(_globalViewModel.StudentInfos);*/
             }
             catch (Exception)
             {

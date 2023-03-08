@@ -37,11 +37,11 @@ namespace homework.Model
             fs.Close();
             return tovarList;
         }
-        public ObservableCollection<StudentInfo> ResultStudent(ObservableCollection<StudentInfo> studentInfos)
+        /*public ObservableCollection<StudentInfo> ResultStudent(ObservableCollection<StudentInfo> studentInfos)
         {
             DateTime dateTime = DateTime.Now;
             var Infos = _globalViewModel.StudentInfos.Where(x => x.Birthday.Month == dateTime.Month);
             return studentInfos = new ObservableCollection<StudentInfo>(Infos);
-        }
+        }*/
     }
 }

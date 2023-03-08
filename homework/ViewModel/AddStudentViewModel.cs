@@ -29,7 +29,7 @@ namespace homework.ViewModel
             set 
             {
                 _group = value;
-                OnPropertyChanged("Groups");
+                OnPropertyChanged();
             }
         }
 
@@ -41,21 +41,32 @@ namespace homework.ViewModel
             set 
             {
                 _fio = value;
-                OnPropertyChanged("FIOS");
+                OnPropertyChanged();
             }
         }
 
-        private DateTime _birthday = DateTime.Now;
+        private string _post;
 
-        public DateTime Birthdays
+        public string Posts 
         {
-            get { return _birthday; }
-            set 
+            get { return _post; }
+            set
             {
-                _birthday = value;
-                OnPropertyChanged("Birthdays");
+                _post = value;
+                OnPropertyChanged();
             }
         }
 
+        private int _experience;
+
+        public int Experience
+        {
+            get { return _experience; }
+            set
+            {
+                _experience = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

@@ -16,9 +16,13 @@ namespace homework.Commands
         }
         public override void Execute(object parameter)
         {
-            _viewModel._globalViewModel.StudentInfos.Add(new Structs.StudentInfo { Group = _viewModel.Groups, 
+            _viewModel._globalViewModel.StudentInfos.Add(new Structs.StudentInfo 
+            {   
+                Group = _viewModel.Groups, 
                 FIO = _viewModel.FIOS,
-                Birthday = _viewModel.Birthdays });
+                Post = _viewModel.Posts,
+                Experience = _viewModel.Experience,
+            });
         }
     }
 }
