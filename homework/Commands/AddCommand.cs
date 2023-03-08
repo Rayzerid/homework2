@@ -22,7 +22,6 @@ namespace homework.Commands
         public override async void Execute(object parameter)
         {
             var displayRootRegistry = (Application.Current as App).displayRootRegistry;
-
             var dialogWindowViewModel = new AddStudentViewModel(_globalViewModel);
             await displayRootRegistry.ShowModalPresentation(dialogWindowViewModel);
 

@@ -32,9 +32,8 @@ namespace homework.ViewModel
             set 
             { 
                 studentInfos = value;
-                OnPropertyChanged("StudentInfos");
+                OnPropertyChanged();
             }
         }
-
     }
 }

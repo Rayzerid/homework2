@@ -25,7 +25,7 @@ namespace homework.Commands
             {
                 FileProcess fileProcess = new FileProcess(_globalViewModel);
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "*.dat|*.dat";
+                saveFileDialog.Filter = "*.xml|*.xml";
                 saveFileDialog.Title = "Выберите месторасположение файла";
                 saveFileDialog.RestoreDirectory = true;
                 saveFileDialog.ShowDialog();

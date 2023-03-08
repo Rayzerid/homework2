@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 using homework.Structs;
 using homework.ViewModel;
 
@@ -22,26 +24,25 @@ namespace homework.Model
         public void SaveToFile(string path)
         {
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
-            BinaryFormatter formatter = new BinaryFormatter();
+            XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<StudentInfo>));
             formatter.Serialize(fs, _globalViewModel.StudentInfos);
             fs.Close();
         }
 
         public ObservableCollection<StudentInfo> ReadFromFile(string path)
         {
-            ObservableCollection<StudentInfo> tovarList;
+            ObservableCollection<StudentInfo> person;
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
-            BinaryFormatter formatter = new BinaryFormatter();
+            XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<StudentInfo>));
             object result = formatter.Deserialize(fs);
-            tovarList = (ObservableCollection<StudentInfo>)result;
+            person = (ObservableCollection<StudentInfo>)result;
             fs.Close();
-            return tovarList;
+            return person;
         }
-        /*public ObservableCollection<StudentInfo> ResultStudent(ObservableCollection<StudentInfo> studentInfos)
+        public ObservableCollection<StudentInfo> ResultStudent(ObservableCollection<StudentInfo> studentInfos)
         {
-            DateTime dateTime = DateTime.Now;
-            var Infos = _globalViewModel.StudentInfos.Where(x => x.Birthday.Month == dateTime.Month);
+            var Infos = _globalViewModel.StudentInfos.Where(x => x.Experience >= 10);
             return studentInfos = new ObservableCollection<StudentInfo>(Infos);
-        }*/
+        }
     }
 }

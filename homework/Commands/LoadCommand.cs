@@ -24,7 +24,7 @@ namespace homework.Commands
             {
                 FileProcess fileProcess = new FileProcess(_globalViewModel);
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "*.dat|*.dat";
+                ofd.Filter = "*.xml|*.xml";
                 ofd.Title = "Выберите месторасположение файла";
                 ofd.RestoreDirectory = true;
                 ofd.ShowDialog();
