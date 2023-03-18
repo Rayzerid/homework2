@@ -4,6 +4,9 @@ using System.Collections.ObjectModel;
 using System.Data;
 using homework.Commands;
 using System.Windows.Input;
+using System.Windows.Controls;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace homework.ViewModel
 {
@@ -14,9 +17,11 @@ namespace homework.ViewModel
         public ICommand LoadCommand { get; }
         public ICommand ResultCommand { get; }
         public ICommand ClearCommand { get; }
+        public ICommand DeleteCommand { get; }
 
         public GlobalViewModel()
         {
+            DeleteCommand = new DeleteCommand(this);
             ClearCommand = new ClearCommand(this);
             ResultCommand = new ResultCommand(this);
             LoadCommand = new LoadCommand(this);
@@ -29,11 +34,36 @@ namespace homework.ViewModel
         public ObservableCollection<StudentInfo> StudentInfos
         {
             get { return studentInfos; }
-            set 
-            { 
+            set
+            {
                 studentInfos = value;
                 OnPropertyChanged();
             }
         }
+
+        private int selectedItemIndex;
+        public int SelectedItemIndex
+        {
+            get { return selectedItemIndex; }
+            set
+            {
+                if (selectedItemIndex != value)
+                {
+                    selectedItemIndex = value;
+                    OnPropertyChanged("SelectedItemIndex");
+                }
+            }
+        }
+
+        public ICommand CellEditEndingCommand => new RelayCommand<object>(OnCellEditEnding);
+
+        private void OnCellEditEnding(object e)
+        {
+            if (e is StudentInfo item)
+            {
+                studentInfos[selectedItemIndex] = item;
+            }
+        }
+
     }
 }

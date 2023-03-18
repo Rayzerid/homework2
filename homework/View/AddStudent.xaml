@@ -15,34 +15,22 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Orientation="Vertical">
-            <TextBlock Text="Фио" />
+            <TextBlock Text="Группа" />
             <TextBox
                 Width="250"
-                Height="25"
-                FontSize="15"
-                Text="{Binding Path=FIOS}"
-                TextAlignment="Center" />
-            <TextBlock Text="Подразделение" />
-            <TextBox
-                Width="250"
-                Height="25"
-                FontSize="15"
+                Height="50"
+                FontSize="25"
                 Text="{Binding Path=Groups}"
                 TextAlignment="Center" />
-            <TextBlock Text="Должность" />
+            <TextBlock Text="ФИО" />
             <TextBox
                 Width="250"
-                Height="25"
-                FontSize="15"
-                Text="{Binding Path=Posts}"
+                Height="50"
+                FontSize="25"
+                Text="{Binding Path=FIOS}"
                 TextAlignment="Center" />
-            <TextBlock Text="Стаж" />
-            <TextBox
-                Width="250"
-                Height="25"
-                FontSize="15"
-                Text="{Binding Path=Experience}"
-                TextAlignment="Center" />
+            <TextBlock Text="День Рождения" />
+            <DatePicker SelectedDate="{Binding Path=Birthdays, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}" />
             <Button Margin="0,5,0,0" Command="{Binding SaveAddCommand}">
                 <TextBlock Text="Сохранить" />
             </Button>

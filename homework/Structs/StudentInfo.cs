@@ -9,9 +9,8 @@ namespace homework.Structs
     [Serializable]
     public struct StudentInfo
     {
-        public string FIO { get; set; }
         public string Group { get; set; }
-        public string Post { get; set; }
-        public int Experience { get; set; }
+        public string FIO { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

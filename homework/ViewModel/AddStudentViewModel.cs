@@ -26,10 +26,10 @@ namespace homework.ViewModel
         public string Groups
         {
             get { return _group; }
-            set 
+            set
             {
                 _group = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Groups");
             }
         }
 
@@ -38,34 +38,22 @@ namespace homework.ViewModel
         public string FIOS
         {
             get { return _fio; }
-            set 
+            set
             {
                 _fio = value;
-                OnPropertyChanged();
+                OnPropertyChanged("FIOS");
             }
         }
 
-        private string _post;
+        private DateTime _birthday = DateTime.Now;
 
-        public string Posts 
+        public DateTime Birthdays
         {
-            get { return _post; }
+            get { return _birthday; }
             set
             {
-                _post = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _experience;
-
-        public int Experience
-        {
-            get { return _experience; }
-            set
-            {
-                _experience = value;
-                OnPropertyChanged();
+                _birthday = value;
+                OnPropertyChanged("Birthdays");
             }
         }
     }

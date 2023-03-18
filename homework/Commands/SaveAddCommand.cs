@@ -20,8 +20,7 @@ namespace homework.Commands
             {   
                 Group = _viewModel.Groups, 
                 FIO = _viewModel.FIOS,
-                Post = _viewModel.Posts,
-                Experience = _viewModel.Experience,
+                Birthday = _viewModel.Birthdays
             });
         }
     }

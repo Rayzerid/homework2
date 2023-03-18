@@ -22,6 +22,7 @@ namespace homework
         {
             displayRootRegistry.RegisterWindowType<GlobalViewModel, MainWindow>();
             displayRootRegistry.RegisterWindowType<AddStudentViewModel, AddStudent>();
+            displayRootRegistry.RegisterWindowType<ResultViewModel, ResultView>();
         }
 
         protected override async void OnStartup(StartupEventArgs e)

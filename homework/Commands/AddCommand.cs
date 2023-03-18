@@ -24,7 +24,6 @@ namespace homework.Commands
             var displayRootRegistry = (Application.Current as App).displayRootRegistry;
             var dialogWindowViewModel = new AddStudentViewModel(_globalViewModel);
             await displayRootRegistry.ShowModalPresentation(dialogWindowViewModel);
-
         }
     }
 }

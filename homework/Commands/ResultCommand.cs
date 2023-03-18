@@ -16,12 +16,13 @@ namespace homework.Commands
         {
             _globalViewModel = globalViewModel;
         }
-        public override void Execute(object parameter)
+        public override async void Execute(object parameter)
         {
             try
             {
-                FileProcess fileProcess = new FileProcess(_globalViewModel);
-                _globalViewModel.StudentInfos = fileProcess.ResultStudent(_globalViewModel.StudentInfos);
+                var displayRootRegistry = (Application.Current as App).displayRootRegistry;
+                var dialogWindowViewModel = new ResultViewModel(_globalViewModel);
+                await displayRootRegistry.ShowModalPresentation(dialogWindowViewModel);
             }
             catch (Exception)
             {

@@ -23,7 +23,7 @@ namespace homework.Model
 
         public void SaveToFile(string path)
         {
-            FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
+            FileStream fs = new FileStream(path, FileMode.Create);
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<StudentInfo>));
             formatter.Serialize(fs, _globalViewModel.StudentInfos);
             fs.Close();
@@ -41,8 +41,8 @@ namespace homework.Model
         }
         public ObservableCollection<StudentInfo> ResultStudent(ObservableCollection<StudentInfo> studentInfos)
         {
-            var Infos = _globalViewModel.StudentInfos.Where(x => x.Experience >= 10);
-            return studentInfos = new ObservableCollection<StudentInfo>(Infos);
+            DateTime dateTime = DateTime.Now;
+            return studentInfos = new ObservableCollection<StudentInfo>(_globalViewModel.StudentInfos.Where(x => x.Birthday.Month == dateTime.Month));
         }
     }
 }
